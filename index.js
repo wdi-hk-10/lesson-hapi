@@ -8,10 +8,7 @@ server.connection({
   host: 'localhost',
   port: process.env.PORT || 8000,
   routes: {
-    cors: {
-      headers: ["Access-Control-Allow-Credentials"],
-      credentials: true
-    }
+    cors: true
   }
 });
 
