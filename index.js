@@ -5,8 +5,8 @@ var server = new Hapi.Server();
 
 // configuring the server address
 server.connection({
-  host: 'localhost',
-  port: process.env.PORT || 8000,
+  // host: 'localhost'
+  port: parseInt(process.env.PORT) || 8000,
   routes: {
     cors: true
   }

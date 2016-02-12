@@ -8,7 +8,8 @@ exports.register = function (server, options, next) {
 
         db.collection('doughnuts').find().toArray(function (err, results) {
           if (err) { return reply(err); }
-          reply(results);
+          // reply(results);
+          reply.view('doughnuts/index', {doughnuts: results});
         });
       }
     },
