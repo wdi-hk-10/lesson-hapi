@@ -1,0 +1,25 @@
+<h1>Doughnut Shop | SHOW</h1>
+
+<form id="edit-doughnut" action="/doughnuts/{{doughnut._id}}/update" method="POST">
+  <input type="text" name='flavor' id="edit-doughnut-flavor" placeholder="What type of doughnut?" value="Chocolate">
+  <select name="style" id="edit-doughnut-style">
+    <option value="Old Fashioned">Old Fashioned</option>
+    <option value="Cake">Cake</option>
+    <option value="French Cruller">French Cruller</option>
+    <option value="Fritter">Fritter</option>
+    <option value="Cream">Cream</option>
+    <option value="Jelly">Jelly</option>
+    <option value="Cruller">Cruller</option>
+    <option value="Glazed">Glazed</option>
+    <option value="Yeast">Yeast</option>
+  </select>
+  <input type="submit" class="btn btn-warning" value='Update My Doughnut'>
+</form>
+
+<form action="/doughnuts/{{doughnut._id}}/destroy" method="POST">
+  <button type="submit" class="btn btn-danger">Delete This Doughnut</button>
+</form>
+
+<h2>{{doughnut.flavor}} - <em>{{doughnut.style}}</em></h2>
+
+<a href="/doughnuts" class="btn btn-default">BACK</a>

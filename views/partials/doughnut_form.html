@@ -1,6 +1,4 @@
-<h1>Doughnut Shop | INDEX</h1>
-
-<form id="new-doughnut" action="/doughnuts" method="POST">
+<form id="new-doughnut" action="{{path}}" method="POST">
   <input type="text" name='flavor' id="new-doughnut-flavor" placeholder="What type of doughnut?" value="Chocolate">
   <select name="style" id="new-doughnut-style">
     <option value="Old Fashioned">Old Fashioned</option>
@@ -13,11 +11,5 @@
     <option value="Glazed">Glazed</option>
     <option value="Yeast">Yeast</option>
   </select>
-  <input type="submit" class="btn btn-warning" value='Update My Doughnut'>
+  <input type="submit" value='Save My Doughnut'>
 </form>
-
-<ul>
-  {{#each doughnuts}}
-    <li><a href="/doughnuts/{{this._id}}">{{this.flavor}} - <em>{{this.style}}</em></a> <form action="/doughnuts/{{this._id}}/destroy" method="POST"><button type="submit" class="btn btn-danger">Delete</button></form></li>
-  {{/each}}
-</ul>

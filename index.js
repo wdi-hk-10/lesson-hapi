@@ -5,7 +5,7 @@ var server = new Hapi.Server();
 
 // configuring the server address
 server.connection({
-  // host: 'localhost'
+  host: 'localhost',
   port: parseInt(process.env.PORT) || 8000,
   routes: {
     cors: true
@@ -49,7 +49,8 @@ server.register(plugins, function(err){
     engines: {html: require('handlebars')},
     path: Path.join(__dirname, 'views/templates'),
     layout: true,
-    layoutPath: Path.join(__dirname, 'views/layouts')
+    layoutPath: Path.join(__dirname, 'views/layouts'),
+    partialsPath: 'views/partials'
   });
 
   // start the server
